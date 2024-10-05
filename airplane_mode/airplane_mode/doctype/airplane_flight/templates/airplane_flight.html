@@ -1,0 +1,16 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<h1>{{ title }}</h1>
+
+<h3>Flight Details</h3>
+<ul>
+    <li>Airline: {{ frappe.db.get_value("Airplane", doc.airplane, "airline") }}</li>
+    <li>{{ doc.source_airport_code }} &rarr; {{ doc.destination_airport_code }}</li>
+    <li>{{ frappe.format(doc.date_of_departure, {'fieldtype': 'Date'}) }} | {{ frappe.format(doc.time_of_departure, {'fieldtype': 'Time'}) }}</li>
+    <li>Duration: {{ frappe.format(doc.duration, {'fieldtype': 'Duration'}) }}</li>
+</ul>
+<a href="/ticket-booking-web-form/new?flight_price=10000&flight={{ doc.name }}"><button class="btn btn-primary">Book Flight</button></a>
+{% endblock %}
+
+<!-- this is a sample default web page template -->
