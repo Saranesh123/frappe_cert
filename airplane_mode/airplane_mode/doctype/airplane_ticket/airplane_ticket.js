@@ -27,4 +27,14 @@ frappe.ui.form.on("Airplane Ticket", {
             }, __("Actions"))
         }
 	},
+
+    setup(frm) {
+        frm.set_query("flight", () => {
+            return {
+                filters: {
+                    docstatus: 1
+                }
+            }
+        })
+    }
 });

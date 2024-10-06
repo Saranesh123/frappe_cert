@@ -1,7 +1,7 @@
 // Copyright (c) 2024, Saranesh and contributors
 // For license information, please see license.txt
 
-frappe.ui.form.on("Airport Tenant", {
+frappe.ui.form.on("Shop Contract", {
 	address(frm) {
         frappe.call({
             method: "frappe.contacts.doctype.address.address.get_address_display",
@@ -18,8 +18,8 @@ frappe.ui.form.on("Airport Tenant", {
         frm.set_query("address", () => {
 			return {
 				filters: {
-					link_doctype: frm.doc.doctype,
-					link_name: frm.doc.name,
+					link_doctype: "Tenant",
+					link_name: frm.doc.tenant,
 				},
 			};
 		});
@@ -27,20 +27,27 @@ frappe.ui.form.on("Airport Tenant", {
         frm.set_query("contact", () => {
 			return {
 				filters: {
-					link_doctype: frm.doc.doctype,
-					link_name: frm.doc.name,
+					link_doctype: "Tenant",
+					link_name: frm.doc.tenant,
+				},
+			};
+		});
+
+        frm.set_query("shop", () => {
+			return {
+				filters: {
+					airport: frm.doc.airport,
+					status: "Available"
 				},
 			};
 		});
     },
 
-    refresh(frm) {
-        frappe.dynamic_link = {doc: frm.doc, fieldname: frm.doc.address, doctype: frm.doc.doctype};
-        frm.toggle_display(['address_html','contact_html'], !frm.doc.__islocal);
-        if(!frm.doc.__islocal) {
-            frappe.contacts.render_address_and_contact(frm);
-        } else {
-            frappe.contacts.clear_address_and_contact(frm);
-        }   
-    }
+	refresh(frm) {
+		if (!frm.doc.rent_amount) {
+			frappe.db.get_single_value("Shop Settings", "rent_amount").then((value) => {
+				frm.set_value("rent_amount", value);
+			})
+		}
+	}
 });

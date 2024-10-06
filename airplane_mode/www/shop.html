@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shops</title>
+    <style>
+        body {
+            background-image: url('https://t3.ftcdn.net/jpg/03/06/22/80/360_F_306228011_2jldV5x45r0Ou3IiFJNMj3PDJPXKfgEX.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .card-body {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .scroll {
+            height: 600px; 
+            overflow-y: scroll;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .card img {
+            width: 70%;
+            height: 300px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; font-size: 60px">Welcome to <span style="color:green;">{{ company }}</span></h1>
+
+    <div class="scroll">
+        <div class="row">
+            {% for shop in shops %}
+                <div class="card" style="text-align: center; width:50%; margin-bottom: 10px;">
+                    <img class="card-img-top" src="{{ shop.image }}" alt="Card image cap">
+                    <div class="card-body">
+                        <span style="background-color: black; color: white;">{{ shop.airport }}<br>
+                            Shop No. {{ shop.shop_number }}
+                        </span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

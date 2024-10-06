@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class AirportShopPropertyDetail(Document):
+class ShopSettings(Document):
 	pass

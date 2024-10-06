@@ -2,7 +2,7 @@
  "actions": [],
  "allow_guest_to_view": 1,
  "allow_rename": 1,
- "autoname": "format:{airplane}-{MM}-{YYYY}",
+ "autoname": "format:{airplane}-{MM}-{YYYY}-{###}",
  "creation": "2024-09-30 23:36:42.465430",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -163,7 +163,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2024-10-03 15:20:16.046111",
+ "modified": "2024-10-06 11:13:59.897913",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Flight",

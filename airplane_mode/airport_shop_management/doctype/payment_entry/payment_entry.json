@@ -23,25 +23,11 @@
  ],
  "fields": [
   {
-   "fieldname": "section_break_ja2p",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Airport Shop Payment Entry",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
-  },
-  {
    "fieldname": "contract",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Contract",
-   "options": "Airport Shop Contract",
+   "options": "Shop Contract",
    "reqd": 1
   },
   {
@@ -55,6 +41,15 @@
    "reqd": 1
   },
   {
+   "fetch_from": "tenant.full_name",
+   "fetch_if_empty": 1,
+   "fieldname": "tenant_name",
+   "fieldtype": "Data",
+   "label": "Tenant Name",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
    "fieldname": "column_break_kzgc",
    "fieldtype": "Column Break"
   },
@@ -64,6 +59,26 @@
    "fieldtype": "Date",
    "in_list_view": 1,
    "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "contract.shop",
+   "fieldname": "shop",
+   "fieldtype": "Data",
+   "label": "Shop",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -88,41 +103,27 @@
    "label": "References (if any)"
   },
   {
-   "fetch_from": "tenant.full_name",
-   "fetch_if_empty": 1,
-   "fieldname": "tenant_name",
-   "fieldtype": "Data",
-   "label": "Tenant Name",
-   "read_only": 1
+   "fieldname": "section_break_ja2p",
+   "fieldtype": "Section Break"
   },
   {
-   "fieldname": "start_date",
-   "fieldtype": "Date",
-   "label": "Start Date",
-   "reqd": 1
-  },
-  {
-   "fieldname": "end_date",
-   "fieldtype": "Date",
-   "label": "End Date",
-   "reqd": 1
-  },
-  {
-   "fetch_from": "contract.shop",
-   "fieldname": "shop",
-   "fieldtype": "Data",
-   "label": "Shop",
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Payment Entry",
+   "print_hide": 1,
    "read_only": 1,
-   "reqd": 1
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-10-05 11:57:49.829128",
+ "modified": "2024-10-05 18:01:49.057822",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
- "name": "Airport Shop Payment Entry",
+ "name": "Payment Entry",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [

@@ -1,6 +1,6 @@
 {
  "actions": [],
- "autoname": "autoincrement",
+ "autoname": "format:TNT-{####}",
  "creation": "2024-10-03 17:17:51.867615",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -109,11 +109,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-03 18:32:25.387650",
+ "modified": "2024-10-05 13:14:08.296220",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
- "name": "Airport Tenant",
- "naming_rule": "Autoincrement",
+ "name": "Tenant",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

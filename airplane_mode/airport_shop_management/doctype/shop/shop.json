@@ -10,6 +10,8 @@
   "airport_code",
   "column_break_gqya",
   "shop_number",
+  "status",
+  "image",
   "property_details_section",
   "property_details"
  ],
@@ -51,15 +53,28 @@
   {
    "fieldname": "property_details",
    "fieldtype": "Table",
-   "options": "Airport Shop Property Detail"
+   "options": "Shop Property Detail"
+  },
+  {
+   "default": "Available",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Available\nOccupied"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
   }
  ],
+ "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-03 22:15:11.434062",
+ "modified": "2024-10-05 15:27:46.057577",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
- "name": "Airport Shop",
+ "name": "Shop",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
@@ -78,5 +93,14 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [
+  {
+   "color": "Green",
+   "title": "Available"
+  },
+  {
+   "color": "Red",
+   "title": "Occupied"
+  }
+ ]
 }

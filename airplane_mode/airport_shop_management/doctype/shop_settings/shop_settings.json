@@ -1,0 +1,62 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-10-05 13:19:53.940884",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "rent_amount",
+  "column_break_gfeg",
+  "send_rent_reminders",
+  "email"
+ ],
+ "fields": [
+  {
+   "description": "Monthly",
+   "fieldname": "rent_amount",
+   "fieldtype": "Currency",
+   "label": "Rent Amount"
+  },
+  {
+   "fieldname": "column_break_gfeg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "send_rent_reminders",
+   "fieldtype": "Check",
+   "label": "Send Rent Reminders"
+  },
+  {
+   "depends_on": "send_rent_reminders",
+   "fieldname": "email",
+   "fieldtype": "Link",
+   "label": "Email",
+   "mandatory_depends_on": "send_rent_reminders",
+   "options": "Email Account"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-10-05 15:16:40.173377",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Management",
+ "name": "Shop Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

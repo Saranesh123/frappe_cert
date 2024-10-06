@@ -9,7 +9,7 @@ from frappe.contacts.address_and_contact import (
 )
 
 
-class AirportTenant(Document):
+class Tenant(Document):
     def before_save(self):
         self.full_name = " ".join([self.first_name, self.last_name])
         
